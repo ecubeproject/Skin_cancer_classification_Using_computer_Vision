@@ -1,6 +1,4 @@
-Skin Cancer Detection Using Computer Vision
-
-Deep Learning for Multi Class and Binary Classification on the ISIC 2018 Dataset
+Skin Cancer Detection Using Computer Vision. Deep Learning for Multi Class and Binary Classification on the ISIC 2018 Dataset
 
 Overview
 
@@ -9,50 +7,54 @@ This repository contains the full implementation of a computer vision project fo
 - (2) A transfer learning model based on EfficientNet B3
 
 The project includes model training pipelines, evaluation tools, GradCAM explainability, dataset preprocessing, and a deployed Gradio web application for interactive inference.
+The modular code is ass per the structure below:
 
-
+````markdown
+```text
 project_root/
-    src/
-        models/
-            model_scratch.py
-            model_effnet.py
-        data/
-            dataset_isic.py
-            transforms.py
-            dataloaders.py
-            sampler_isic.py
-        training/
-            trainer_scratch.py
-            trainer_effnet.py
-            eval_utils.py
-        utils/
-            gradcam.py
-            gradcam_effnet.py
+│
+├── src/
+│   ├── models/
+│   │   ├── model_scratch.py
+│   │   └── model_effnet.py
+│   ├── data/
+│   │   ├── dataset_isic.py
+│   │   ├── transforms.py
+│   │   ├── dataloaders.py
+│   │   └── sampler_isic.py
+│   ├── training/
+│   │   ├── trainer_scratch.py
+│   │   ├── trainer_effnet.py
+│   │   └── eval_utils.py
+│   └── utils/
+│       ├── gradcam.py
+│       └── gradcam_effnet.py
+│
+├── notebooks/
+│   ├── Notebook_Final.ipynb
+│   └── Notebook_Final.pdf
+│
+├── reports/
+│   ├── metrics/
+│   ├── models/
+│   └── visuals/
+│
+├── app/
+│   ├── app.py
+│   └── sample_inputs/
+│
+├── checkpoints/
+│   └── README_WEIGHTS.md
+│
+├── data/
+│   ├── README_DATA.md
+│   └── class_balance_stats.json
+│
+├── requirements.txt
+├── requirements_app.txt
+├── Final_Report.pdf (optional)
+└── README.md
 
-    notebooks/
-        Notebook_Final.ipynb
-        Notebook_Final.pdf
-
-    reports/
-        metrics/
-        models/
-        visuals/
-
-    app/
-        app.py
-        sample_inputs/
-
-    checkpoints/
-        README_WEIGHTS.md
-
-    data/
-        README_DATA.md
-        class_balance_stats.json
-
-    requirements.txt
-    requirements_app.txt
-    Final_Report.pdf (optional)
-    README.md
 
 3. Dataset
 
