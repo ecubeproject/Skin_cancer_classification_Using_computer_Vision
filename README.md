@@ -54,7 +54,7 @@ project_root/
 ├── requirements_app.txt
 ├── Final_Report.pdf (optional)
 └── README.md
-
+```
 
 3. Dataset
 
