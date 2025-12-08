@@ -47,12 +47,12 @@ project_root/
 ├── data/
 │   ├── README_DATA.md
 │   └── class_balance_stats.json
-│
+```
 ├── requirements.txt
 ├── requirements_app.txt
 ├── Final_Report.pdf (optional)
 └── README.md
-```
+
 
 3. Dataset: This project uses the publicly available ISIC 2018 Skin Lesion Analysis dataset. It contains high-resolution dermoscopic images labeled into seven diagnostic classes: MEL, NV, BCC, AKIEC, BKL, DF, VASC. The dataset cannot be redistributed. Instructions for downloading it are provided in data/README_DATA.md.
 
