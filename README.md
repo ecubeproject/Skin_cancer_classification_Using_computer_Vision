@@ -1,11 +1,19 @@
-Skin Cancer Detection Using Computer Vision. Deep Learning for Multi Class and Binary Classification on the ISIC 2018 Dataset
+# README.md
 
-Overview: This repository contains the full implementation of a computer vision project focused on automated skin lesion classification using dermoscopic images from the ISIC 2018 Challenge. Two models were developed and evaluated:
-- (1) A custom Convolutional Neural Network (CNN) trained from scratch
-- (2) A transfer learning model based on EfficientNet B3
+# Skin Cancer Detection Using Computer Vision
 
-The project includes model training pipelines, evaluation tools, GradCAM explainability, dataset preprocessing, and a deployed Gradio web application for interactive inference.
-The modular code is ass per the structure below:
+Deep Learning for Multi Class and Binary Classification on the ISIC 2018 Dataset
+
+## Overview
+
+This repository contains the complete implementation of a computer vision project for automated skin lesion classification using dermoscopic images from the ISIC 2018 Challenge. Two deep learning models were developed and evaluated:
+
+1. A custom Convolutional Neural Network (CNN) trained from scratch
+2. A transfer learning model based on EfficientNet B3
+
+The project includes the full training pipeline, evaluation tools, GradCAM explainability, dataset preprocessing scripts, and a deployed Gradio web application for interactive inference.
+
+The codebase follows the modular structure shown below.
 
 ````markdown
 ```text
@@ -47,55 +55,104 @@ project_root/
 ├── data/
 │   ├── README_DATA.md
 │   └── class_balance_stats.json
-```
+│
 ├── requirements.txt
 ├── requirements_app.txt
 ├── Final_Report.pdf (optional)
 └── README.md
+```
+````
 
+## Dataset
 
-3. Dataset: This project uses the publicly available ISIC 2018 Skin Lesion Analysis dataset. It contains high-resolution dermoscopic images labeled into seven diagnostic classes: MEL, NV, BCC, AKIEC, BKL, DF, VASC. The dataset cannot be redistributed. Instructions for downloading it are provided in data/README_DATA.md.
+This project uses the publicly available ISIC 2018 Skin Lesion Analysis dataset. It contains high-resolution dermoscopic images labeled into seven diagnostic classes: MEL, NV, BCC, AKIEC, BKL, DF, VASC.
 
-4. Models Implemented
-  - 4.1 Scratch CNN: A custom architecture designed and trained for 150 epochs. Serves as the baseline for comparison.Includes complete evaluation metrics, ROC curve, confusion matrices, and GradCAM visualizations.
-  - 4.2 EfficientNet B3: A transfer learning model fine-tuned using ImageNet-normalized inputs.Provides significantly improved accuracy and generalization.Final model checkpoint is stored externally with download instructions in checkpoints/README_WEIGHTS.md.
+The dataset cannot be redistributed. Instructions for downloading and preparing it are provided in `data/README_DATA.md`.
 
-5. Evaluation Metrics: The following metrics and artifacts are included for both models: Accuracy, Precision, Recall, F1 (macro, micro, weighted),Confusion matrix for 7-class classification, Binary malignant vs benign evaluation, ROC AUC, GradCAM heatmaps, Loss and accuracy curves across epochs. All figures are available under reports/metrics and reports/visuals.
+## Models Implemented
 
-6. Gradio Web Application
+### 1. Scratch CNN
 
-A fully functional inference interface allows users to upload skin lesion images and receive:
+A custom CNN architecture designed and trained for 150 epochs. It serves as the baseline model for comparison.
+The repository includes complete evaluation results such as confusion matrices, ROC curves, and GradCAM visualizations.
 
-Predicted diagnostic class
+### 2. EfficientNet B3
 
-Class probabilities
+A transfer learning model fine-tuned using ImageNet-normalized inputs.
+EfficientNet B3 provides significant improvements in accuracy and generalization.
+Final trained weights are stored externally, with download instructions in `checkpoints/README_WEIGHTS.md`.
 
-GradCAM heatmaps for interpretability
-Deployed demo (placeholder link): https://your-app-url.example.com
-To run locally:
+## Evaluation Metrics
+
+Both models were evaluated using the following metrics and artifacts:
+
+* Accuracy
+* Precision, Recall, F1-score (macro, micro, weighted)
+* Confusion matrix for 7-class classification
+* Binary malignant vs benign performance
+* ROC AUC
+* GradCAM heatmaps
+* Training and validation loss curves
+* Epoch-wise accuracy curves
+
+All evaluation outputs are stored under `reports/metrics` and `reports/visuals`.
+
+## Gradio Web Application
+
+A fully functional inference interface is included. Users can upload dermoscopic images and obtain:
+
+* Predicted class
+* Class probability distribution
+* GradCAM heatmaps for interpretability
+
+Deployed demo (placeholder):
+[https://your-app-url.example.com](https://your-app-url.example.com)
+
+To run the app locally:
+
+```
 pip install -r requirements_app.txt
-python app/app.py 
-7. Training the Models
+python app/app.py
+```
+
+## Training the Models
+
+### Train the Scratch CNN
+
+```
 pip install -r requirements.txt
 python src/training/trainer_scratch.py
-7.2 Train EfficientNet B3
+```
+
+### Train the EfficientNet B3 Model
+
+```
 python src/training/trainer_effnet.py
-Weights will automatically save to checkpoints/.
-External download instructions are provided in README_WEIGHTS.md.
-8. Reproducibility
+```
+
+Model checkpoints are saved automatically to the `checkpoints/` directory.
+External weight download instructions are provided in `README_WEIGHTS.md`.
+
+## Reproducibility
 
 This repository ensures reproducibility through:
 
-Fixed directory structure
+* Fixed and documented directory structure
+* Modular and readable code
+* Deterministic training and validation splits
+* Saved training histories
+* Comprehensive evaluation scripts
 
-Modular and documented code
+## Final Report
 
-Deterministic data splits
+A complete APA-style technical report summarizing the methodology, experiments, and findings is provided as:
 
-Saved training histories
+`Final_Report.pdf`
 
-Comprehensive evaluation scripts
-9. Final Report
+## Citation
 
-A full APA-style technical report summarizing methodology, experiments, and findings is included as: Final_Report.pdf
-10. Citation: If using this repository, please also cite the ISIC dataset and the EfficientNet paper (citations included in Final_Report.pdf).
+If using this repository, please cite the ISIC 2018 dataset and the EfficientNet paper.
+Citation details are included in `Final_Report.pdf`.
+
+---
+
