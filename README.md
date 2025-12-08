@@ -1,8 +1,6 @@
 Skin Cancer Detection Using Computer Vision. Deep Learning for Multi Class and Binary Classification on the ISIC 2018 Dataset
 
-Overview
-
-This repository contains the full implementation of a computer vision project focused on automated skin lesion classification using dermoscopic images from the ISIC 2018 Challenge. Two models were developed and evaluated:
+Overview: This repository contains the full implementation of a computer vision project focused on automated skin lesion classification using dermoscopic images from the ISIC 2018 Challenge. Two models were developed and evaluated:
 - (1) A custom Convolutional Neural Network (CNN) trained from scratch
 - (2) A transfer learning model based on EfficientNet B3
 
@@ -56,42 +54,14 @@ project_root/
 └── README.md
 ```
 
-3. Dataset
+3. Dataset: This project uses the publicly available ISIC 2018 Skin Lesion Analysis dataset. It contains high-resolution dermoscopic images labeled into seven diagnostic classes: MEL, NV, BCC, AKIEC, BKL, DF, VASC. The dataset cannot be redistributed. Instructions for downloading it are provided in data/README_DATA.md.
 
-This project uses the publicly available ISIC 2018 Skin Lesion Analysis dataset. It contains high-resolution dermoscopic images labeled into seven diagnostic classes: MEL, NV, BCC, AKIEC, BKL, DF, VASC
-
-The dataset cannot be redistributed. Instructions for downloading it are provided in data/README_DATA.md.
 4. Models Implemented
-4.1 Scratch CNN
+  - 4.1 Scratch CNN: A custom architecture designed and trained for 150 epochs. Serves as the baseline for comparison.Includes complete evaluation metrics, ROC curve, confusion matrices, and GradCAM visualizations.
+  - 4.2 EfficientNet B3: A transfer learning model fine-tuned using ImageNet-normalized inputs.Provides significantly improved accuracy and generalization.Final model checkpoint is stored externally with download instructions in checkpoints/README_WEIGHTS.md.
 
-A custom architecture designed and trained for 150 epochs.
-Serves as the baseline for comparison.
-Includes complete evaluation metrics, ROC curve, confusion matrices, and GradCAM visualizations.
+5. Evaluation Metrics: The following metrics and artifacts are included for both models: Accuracy, Precision, Recall, F1 (macro, micro, weighted),Confusion matrix for 7-class classification, Binary malignant vs benign evaluation, ROC AUC, GradCAM heatmaps, Loss and accuracy curves across epochs. All figures are available under reports/metrics and reports/visuals.
 
-4.2 EfficientNet B3
-
-A transfer learning model fine-tuned using ImageNet-normalized inputs.
-Provides significantly improved accuracy and generalization.
-Final model checkpoint is stored externally with download instructions in checkpoints/README_WEIGHTS.md.
-5. Evaluation Metrics
-
-The following metrics and artifacts are included for both models:
-
-Accuracy
-
-Precision, Recall, F1 (macro, micro, weighted)
-
-Confusion matrix for 7-class classification
-
-Binary malignant vs benign evaluation
-
-ROC AUC
-
-GradCAM heatmaps
-
-Loss and accuracy curves across epochs
-
-All figures are available under reports/metrics and reports/visuals.
 6. Gradio Web Application
 
 A fully functional inference interface allows users to upload skin lesion images and receive:
